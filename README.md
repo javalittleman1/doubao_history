@@ -98,7 +98,7 @@
 
 ## 更新日志
 
-- **1.3.2**：脚本头部补充 `@homepageURL` / `@supportURL`（指向 GitHub 仓库）；验证 GitHub push → webhook → GreasyFork 自动发版。
+- **1.3.2**：脚本头部补充 `@homepageURL` / `@supportURL`（指向 GitHub 仓库）。
 - **1.3.1**：源码改由 GitHub 托管，GreasyFork 通过源码同步自动跟进更新；脚本文件更名为 `doubao-yearmonth-group.user.js`。
 - **1.3.0**：点击条目改为前端路由跳转（不再整页刷新）；新增选中态高亮与「滚动到列表中间」定位。
 - **1.2.0**：修复开关位置随内容滚走、切换视图后滚动位置丢失；按钮加入防抖与单实例保护。
@@ -111,9 +111,16 @@
 
 发布一次新版本的流程：
 
-1. 改代码，并把脚本头部的 `@version` 加一（例如 `1.3.1` → `1.3.2`），版本号不变时 GreasyFork 会判定「无更新」。
-2. `git commit` + `git push`（推送到 origin，GitLab 会镜像到 GitHub `master`）。
-3. GitHub 的 push 事件通过 webhook 通知 GreasyFork，GreasyFork 拉取 raw 文件并自动发布；万一 webhook 没触发，等自动同步（约 10 分钟）或在 GreasyFork「管理」页点「更新设置并立即同步」。
+1. 改代码，并把脚本头部的 `@version` 加一（例如 `1.3.2` → `1.3.3`）。版本号不变时 GreasyFork 会判定「无更新」，不会发布。
+2. `git commit` + `git push`：仓库有两条远端，`origin` 是 GitLab（主仓），同时可直推 `https://github.com/javalittleman1/doubao_history.git`；只推 GitLab 时 GitHub 镜像也会跟上（实测同步有几分钟延迟）。
+3. GreasyFork 更新：脚本的同步方式设为「自动」，会定期拉取 GitHub raw 文件比对版本；想立刻生效，就在 GreasyFork「管理」页点「更新设置并立即同步」。
+   > 说明：GreasyFork 也提供了 webhook 功能，但它的接收端点（`api.greasyfork.org/.../webhook`）对 GitHub 的投递固定返回 403，实测不可用，所以本仓库没有再挂 webhook（挂了也已删除），发版以「自动同步 + 需要时手动触发」为准。
+   > 另外，`raw.githubusercontent.com` 有几分钟的 CDN 缓存，刚推送完立刻触发同步可能读到旧内容、提示「无更新」，等缓存刷新后再同步一次即可。
+
+两种安装渠道的更新互不干扰：
+
+- 从 GreasyFork 安装 → 走 GreasyFork 生成的 `@updateURL` 自动更新；
+- 从 GitHub raw 安装 → Tampermonkey 按安装地址（raw 链接）检查更新。
 
 两种安装渠道的更新互不干扰：
 

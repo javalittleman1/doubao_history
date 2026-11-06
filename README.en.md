@@ -98,10 +98,24 @@ The default cap is 60 pages (~3000 conversations). Lowering `maxPages` is faster
 
 ## Changelog
 
+- **1.3.2** — Added `@homepageURL` / `@supportURL` metadata pointing at the GitHub repository.
+- **1.3.1** — Source of truth moved to GitHub; GreasyFork now tracks it through source sync. File renamed to `doubao-yearmonth-group.user.js`.
 - **1.3.0** — Item clicks now use the client-side router (no page reload); added active highlighting and center-on-select scrolling.
 - **1.2.0** — Fixed the switch row scrolling away and the scroll position being lost when toggling; added click debounce and a single-instance guard.
 - **1.1.0** — Switched to all-device full pagination with batched title backfill, fixing "only 50 items" and "every title is untitled".
 - **1.0.0** — First working version.
+
+## Releasing a new version
+
+The GitHub repository (`javalittleman1/doubao_history`) is the single source of truth; the GreasyFork listing follows it via source sync.
+
+1. Edit the code and bump `@version` in the script header (an unchanged version is reported as "no update" and never published).
+2. `git commit` + `git push` (GitLab is the primary remote; you can also push straight to `https://github.com/javalittleman1/doubao_history.git`).
+3. GreasyFork is set to automatic sync and will pick up the new raw file on its next check. To publish immediately, press "Update settings and sync now" on the GreasyFork admin page.
+
+> GreasyFork's webhook endpoint returns 403 to GitHub deliveries, so this repo does not use one. Also note `raw.githubusercontent.com` sits behind a few-minute CDN cache: syncing seconds after a push can still read the old file and report "no update".
+
+Both install channels update independently: GreasyFork installs follow GreasyFork's generated `@updateURL`, GitHub raw installs are checked by Tampermonkey against the raw URL.
 
 ## Disclaimer
 
