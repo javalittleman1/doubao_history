@@ -98,6 +98,7 @@
 
 ## 更新日志
 
+- **1.3.2**：脚本头部补充 `@homepageURL` / `@supportURL`（指向 GitHub 仓库）；验证 GitHub push → webhook → GreasyFork 自动发版。
 - **1.3.1**：源码改由 GitHub 托管，GreasyFork 通过源码同步自动跟进更新；脚本文件更名为 `doubao-yearmonth-group.user.js`。
 - **1.3.0**：点击条目改为前端路由跳转（不再整页刷新）；新增选中态高亮与「滚动到列表中间」定位。
 - **1.2.0**：修复开关位置随内容滚走、切换视图后滚动位置丢失；按钮加入防抖与单实例保护。
