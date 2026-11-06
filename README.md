@@ -2,6 +2,9 @@
 
 一个给 **豆包网页版**（https://www.doubao.com/chat）用的 Tampermonkey 脚本：在左侧栏加一个「按年月分组」开关，点一下就把**全部历史对话**按 `年-月` 聚合展示，而不是像原生那样只有「最近」一条流水账。
 
+- 在线安装：https://greasyfork.org/zh-CN/scripts/604029
+- 直链安装（.user.js）：https://update.greasyfork.org/scripts/604029/豆包%20·%20侧栏对话按年月分组.user.js
+
 > 英文说明见 [README.en.md](README.en.md)
 
 ![效果预览](preview-yearmonth.png)
@@ -32,7 +35,7 @@
 
 1. 给浏览器安装 **Tampermonkey** 扩展（Chrome / Edge / Firefox 均可）。
 2. 点扩展图标 →「添加新脚本」→ 清空编辑器里的模板。
-3. 把 `豆包侧栏按年月分组.user.js` 全文粘贴进去，`Ctrl+S` 保存。
+3. 把 `doubao-yearmonth-group.user.js` 全文粘贴进去，`Ctrl+S` 保存。
 4. 打开 https://www.doubao.com/chat/ ，刷新一次页面即可。
 
 也可以直接把 `.user.js` 文件拖进浏览器窗口，Tampermonkey 会弹出安装确认页。

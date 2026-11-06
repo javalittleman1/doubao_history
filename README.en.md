@@ -2,6 +2,9 @@
 
 A Tampermonkey userscript for the **Doubao web app** (https://www.doubao.com/chat). It adds a *Group by year & month* switch to the left sidebar; flip it and your **entire conversation history** is regrouped by `YYYY-MM` instead of the native flat "recent" list.
 
+- Install from GreasyFork: https://greasyfork.org/en/scripts/604029
+- Direct `.user.js` link: https://update.greasyfork.org/scripts/604029/豆包%20·%20侧栏对话按年月分组.user.js
+
 > 中文说明见 [README.md](README.md)
 
 ![Preview](preview-yearmonth.png)
@@ -32,7 +35,7 @@ The native sidebar only keeps a few dozen recent conversations loaded, so anythi
 
 1. Install the **Tampermonkey** extension (Chrome / Edge / Firefox).
 2. Click the extension icon → *Create a new script* → clear the template.
-3. Paste the whole `豆包侧栏按年月分组.user.js` file and save with `Ctrl+S`.
+3. Paste the whole `doubao-yearmonth-group.user.js` file and save with `Ctrl+S`.
 4. Open https://www.doubao.com/chat/ and reload the page once.
 
 You can also drag the `.user.js` file into a browser window; Tampermonkey will show its install page.

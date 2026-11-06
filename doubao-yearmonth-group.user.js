@@ -1,9 +1,12 @@
 // ==UserScript==
 // @name         豆包 · 侧栏对话按年月分组
-// @namespace    doubao-yearmonth-group
+// @name:en      Doubao Sidebar - Group Chats by Year & Month
+// @namespace    https://greasyfork.org/users/1661485
 // @version      1.3.0
 // @description  在豆包网页版左侧栏增加「按年月分组」开关。点击后按 年-月 聚合全部历史对话（跨设备、跨项目）；点击条目用前端路由跳转、不刷新页面，并把选中的会话滚动到列表中间。
-// @author       local
+// @description:en  Adds a "Group by year & month" switch to the Doubao web sidebar. It regroups your full chat history (all devices, all projects) by YYYY-MM; clicking an entry navigates through the site's own client-side router (no page reload) and scrolls the selected chat to the middle of the list.
+// @author       javalittleman1
+// @license      MIT
 // @match        https://www.doubao.com/*
 // @match        https://doubao.com/*
 // @run-at       document-idle
