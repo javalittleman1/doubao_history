@@ -1,5 +1,7 @@
 # 豆包侧栏按年月分组
 
+<img src="icon.png" width="96" alt="脚本图标">
+
 一个给 **豆包网页版**（https://www.doubao.com/chat）用的 Tampermonkey 脚本：在左侧栏加一个「按年月分组」开关，点一下就把**全部历史对话**按 `年-月` 聚合展示，而不是像原生那样只有「最近」一条流水账。
 
 - 在线安装（GreasyFork）：https://greasyfork.org/zh-CN/scripts/604029
@@ -98,6 +100,7 @@
 
 ## 更新日志
 
+- **1.3.3**：新增脚本图标（豆包圆脸＋齿轮徽章），脚本头部补 `@icon` / `@icon64`。
 - **1.3.2**：脚本头部补充 `@homepageURL` / `@supportURL`（指向 GitHub 仓库）。
 - **1.3.1**：源码改由 GitHub 托管，GreasyFork 通过源码同步自动跟进更新；脚本文件更名为 `doubao-yearmonth-group.user.js`。
 - **1.3.0**：点击条目改为前端路由跳转（不再整页刷新）；新增选中态高亮与「滚动到列表中间」定位。

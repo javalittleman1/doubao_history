@@ -1,5 +1,7 @@
 # Doubao Sidebar: Group Conversations by Year & Month
 
+<img src="icon.png" width="96" alt="Script icon">
+
 A Tampermonkey userscript for the **Doubao web app** (https://www.doubao.com/chat). It adds a *Group by year & month* switch to the left sidebar; flip it and your **entire conversation history** is regrouped by `YYYY-MM` instead of the native flat "recent" list.
 
 - Install from GreasyFork: https://greasyfork.org/en/scripts/604029
@@ -98,6 +100,7 @@ The default cap is 60 pages (~3000 conversations). Lowering `maxPages` is faster
 
 ## Changelog
 
+- **1.3.3** — Added a script icon (Doubao-style round face inside a gear badge) with `@icon` / `@icon64` metadata.
 - **1.3.2** — Added `@homepageURL` / `@supportURL` metadata pointing at the GitHub repository.
 - **1.3.1** — Source of truth moved to GitHub; GreasyFork now tracks it through source sync. File renamed to `doubao-yearmonth-group.user.js`.
 - **1.3.0** — Item clicks now use the client-side router (no page reload); added active highlighting and center-on-select scrolling.
