@@ -2,8 +2,9 @@
 
 一个给 **豆包网页版**（https://www.doubao.com/chat）用的 Tampermonkey 脚本：在左侧栏加一个「按年月分组」开关，点一下就把**全部历史对话**按 `年-月` 聚合展示，而不是像原生那样只有「最近」一条流水账。
 
-- 在线安装：https://greasyfork.org/zh-CN/scripts/604029
-- 直链安装（.user.js）：https://update.greasyfork.org/scripts/604029/豆包%20·%20侧栏对话按年月分组.user.js
+- 在线安装（GreasyFork）：https://greasyfork.org/zh-CN/scripts/604029
+- 从 GitHub 安装：https://raw.githubusercontent.com/javalittleman1/doubao_history/master/doubao-yearmonth-group.user.js
+- GreasyFork 直链：https://update.greasyfork.org/scripts/604029/doubao-yearmonth-group.user.js
 
 > 英文说明见 [README.en.md](README.en.md)
 
@@ -102,6 +103,21 @@
 - **1.2.0**：修复开关位置随内容滚走、切换视图后滚动位置丢失；按钮加入防抖与单实例保护。
 - **1.1.0**：改为全设备全量翻页 + 批量补标题，修复「只有 50 条」「标题全部未命名」。
 - **1.0.0**：首个可用版本。
+
+## 更新与发布
+
+本仓库（GitHub `javalittleman1/doubao_history`）是脚本的唯一源码，GreasyFork 页面通过「源代码同步」跟随 `master` 分支自动发版。
+
+发布一次新版本的流程：
+
+1. 改代码，并把脚本头部的 `@version` 加一（例如 `1.3.1` → `1.3.2`），版本号不变时 GreasyFork 会判定「无更新」。
+2. `git commit` + `git push`（推送到 origin，GitLab 会镜像到 GitHub `master`）。
+3. GitHub 的 push 事件通过 webhook 通知 GreasyFork，GreasyFork 拉取 raw 文件并自动发布；万一 webhook 没触发，等自动同步（约 10 分钟）或在 GreasyFork「管理」页点「更新设置并立即同步」。
+
+两种安装渠道的更新互不干扰：
+
+- 从 GreasyFork 安装 → 走 GreasyFork 生成的 `@updateURL` 自动更新；
+- 从 GitHub raw 安装 → Tampermonkey 按安装地址（raw 链接）检查更新。
 
 ## 免责声明
 
